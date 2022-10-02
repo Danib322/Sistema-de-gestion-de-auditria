@@ -1,1 +1,14 @@
-<p>mostrar-usuarios works!</p>
+<table class="table table-striped">
+    <thead>
+        <th>ID</th>
+        <th>Nombre de Usuario</th>
+        <th>Cedula</th>
+        <th>TipoUsuario</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of UsuariosList$|async">
+            <td>{{item.usuarioId}}</td>
+        </tr>
+    </tbody>
+    
+</table>
