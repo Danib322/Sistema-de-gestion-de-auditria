@@ -14,7 +14,7 @@ options.UseSqlServer(builder.Configuration.GetConnectionString("dbconn")));
 builder.Services.AddCors(options => {
     options.AddPolicy(name: CrosService,
                         builder => {
-                            builder.WithOrigins("http://localhots:4200")
+                            builder.WithOrigins("*")
                             .AllowAnyMethod()
                             .AllowAnyHeader();
                         });

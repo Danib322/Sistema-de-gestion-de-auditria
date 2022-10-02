@@ -15,12 +15,12 @@ export class AuditoriasAPIService {
   //Crud usuario
   getUsuariosList():Observable<any []>
   {
-    return this.http.get<any>(this.auditoriasAPIUrl+'/Usuarios');
+    return this.http.get<any>(this.auditoriasAPIUrl + '/Usuarios');
   }
 
   addUsuario(data:any)
   {
-    return this.http.post(this.auditoriasAPIUrl+'/Usuarios',data);
+    return this.http.post(this.auditoriasAPIUrl +'/Usuarios',data);
 
   }
 

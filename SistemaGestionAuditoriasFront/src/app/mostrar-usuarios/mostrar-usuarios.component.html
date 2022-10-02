@@ -6,8 +6,11 @@
         <th>TipoUsuario</th>
     </thead>
     <tbody>
-        <tr *ngFor="let item of UsuariosList$|async">
-            <td>{{item.usuarioId}}</td>
+        <tr *ngFor="let Usuario of UsuariosList$|async">
+            <td>{{Usuario.usuarioId}}</td>
+            <td>{{Usuario.nombreUsuario}}</td>
+            <td>{{Usuario.cedula}}</td>
+            <td>{{Usuario.tipoUsuario}}</td>
         </tr>
     </tbody>
     
