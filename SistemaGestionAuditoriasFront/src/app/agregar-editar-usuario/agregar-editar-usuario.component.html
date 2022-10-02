@@ -1,1 +1,27 @@
-<p>agregar-editar-usuario works!</p>
+<form [formGroup]="form" (ngSubmit)="GuardarUsuario()">
+    <div>
+        <h1>Ingreso de nuevos usuarios</h1>
+    </div>
+    <div>
+        <input type="text" formControlName="nombreUsuario" placeholder="Nombre de usuario" maxlength="200">
+    </div>
+    <div>
+        <input type="text" formControlName="cedula" placeholder="cedula" maxlength="10">
+    </div>
+    <div>
+        <input type="text" formControlName="tipoUsuario" placeholder="Auditoria especializada en.."maxlength="280">
+    </div>
+    <div>
+        <input type="text" formControlName="claveUsuario" placeholder="Clave de usuario" maxlength="4">
+    </div>
+    <div>
+        <button [disabled]="form.invalid" type="submit">
+            Guardar Cambios
+         </button>
+    </div>
+</form>
+
+
+<button button type="button" routerLink="..">
+    Regresar
+ </button>

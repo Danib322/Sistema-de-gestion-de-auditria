@@ -18,17 +18,17 @@ export class AuditoriasAPIService {
     return this.http.get<any>(this.auditoriasAPIUrl + '/Usuarios');
   }
 
-  addUsuario(data:any)
+  addUsuario(data:{nombreUsuario:string,cedula:string,tipoUsuario:string,claveUsuario:string})
   {
     return this.http.post(this.auditoriasAPIUrl +'/Usuarios',data);
 
   }
 
-  updateUsuarios(id:number|string, data:any)
+  updateUsuarios(id:number, data:any)
   {
     return this.http.put(this.auditoriasAPIUrl+`/Usuarios/${id}`,data);
   }
-  deleteUsuario(id:number|string)
+  deleteUsuario(id:number)
   {
     return this.http.delete(this.auditoriasAPIUrl+`/Usuarios/${id}`);
   }

@@ -7,6 +7,10 @@ import { UsuariosComponent } from './usuarios/usuarios.component';
 import { MostrarUsuariosComponent } from './mostrar-usuarios/mostrar-usuarios.component';
 import { AgregarEditarUsuarioComponent } from './agregar-editar-usuario/agregar-editar-usuario.component';
 import{AuditoriasAPIService} from './auditorias-api.service';
+import { RutasAppModule } from './rutas-app.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +23,11 @@ import{AuditoriasAPIService} from './auditorias-api.service';
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RutasAppModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
+    
     
   ],
   providers: [AuditoriasAPIService],

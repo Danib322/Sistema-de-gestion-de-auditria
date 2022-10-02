@@ -1,3 +1,13 @@
+
+ <button button type="button" routerLink="agregar-editar-usuario">
+    Agregar usuario
+    
+ </button> 
+
+<button type="button">
+    Eliminar Usuario
+</button>
+
 <table class="table table-striped">
     <thead>
         <th>ID</th>
@@ -11,7 +21,19 @@
             <td>{{Usuario.nombreUsuario}}</td>
             <td>{{Usuario.cedula}}</td>
             <td>{{Usuario.tipoUsuario}}</td>
+            <td>
+                <button>
+                    Editar
+                </button>
+            </td>
+            <td>
+                <button>
+                    Eliminiar
+                </button>
+            </td>
         </tr>
     </tbody>
+
+   
     
 </table>
