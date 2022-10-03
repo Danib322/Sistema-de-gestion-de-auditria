@@ -23,5 +23,31 @@ export class MostrarUsuariosComponent implements OnInit {
   {
     this.router.navigate([`$(nombre)`]);
   }
+  EliminarUsuario(usuarioId:number)
+  {
+      if(confirm('Esta seguro que desea eliminar al usuario'))
+      {
+        this.service.deleteUsuario(usuarioId).subscribe(data =>
+          {
+            this.ngOnInit();
+            this.service.getUsuariosList();
+          });
+      }
+      
+  }
+
+  ActualizarUsusario(id:number)
+  {
+    
+    this.router.navigate(['agregar',id])
+    console.log(id)
+    
+  }
+  nuevoUsuario()
+  {
+    this.router.navigate(['agregar',0])
+  }
+
+  
 
 }

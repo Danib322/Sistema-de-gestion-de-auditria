@@ -1,33 +1,31 @@
 
- <button button type="button" routerLink="agregar-editar-usuario">
+ <button button type="button" (click)="nuevoUsuario()">
     Agregar usuario
     
  </button> 
 
-<button type="button">
-    Eliminar Usuario
-</button>
+
 
 <table class="table table-striped">
     <thead>
-        <th>ID</th>
+        
         <th>Nombre de Usuario</th>
         <th>Cedula</th>
         <th>TipoUsuario</th>
     </thead>
     <tbody>
         <tr *ngFor="let Usuario of UsuariosList$|async">
-            <td>{{Usuario.usuarioId}}</td>
+            
             <td>{{Usuario.nombreUsuario}}</td>
             <td>{{Usuario.cedula}}</td>
             <td>{{Usuario.tipoUsuario}}</td>
             <td>
-                <button>
+                <button (click)="ActualizarUsusario(Usuario.usuarioId)">
                     Editar
                 </button>
             </td>
             <td>
-                <button>
+                <button (click)="EliminarUsuario(Usuario.usuarioId)">
                     Eliminiar
                 </button>
             </td>

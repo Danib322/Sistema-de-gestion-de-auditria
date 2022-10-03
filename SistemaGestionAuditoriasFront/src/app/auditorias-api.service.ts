@@ -1,6 +1,8 @@
 import{HttpClient} from'@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { MostrarUsuariosComponent } from './mostrar-usuarios/mostrar-usuarios.component';
+import { Usuario } from './usuario';
 
 @Injectable({
   providedIn: 'root'
@@ -8,14 +10,20 @@ import { Observable } from 'rxjs';
 export class AuditoriasAPIService {
 
   readonly auditoriasAPIUrl="https://localhost:7169/api";
+  
 
   constructor(private http:HttpClient) { }
+
 
 
   //Crud usuario
   getUsuariosList():Observable<any []>
   {
     return this.http.get<any>(this.auditoriasAPIUrl + '/Usuarios');
+  }
+  getUsuarioUnico(id:number)
+  {
+    return this.http.get<Usuario>(this.auditoriasAPIUrl+`/Usuarios/${id}`);
   }
 
   addUsuario(data:{nombreUsuario:string,cedula:string,tipoUsuario:string,claveUsuario:string})
@@ -24,7 +32,7 @@ export class AuditoriasAPIService {
 
   }
 
-  updateUsuarios(id:number, data:any)
+  updateUsuarios(id:number, data:{ usuarioId:number, nombreUsuario:string,cedula:string,tipoUsuario:string,claveUsuario:string})
   {
     return this.http.put(this.auditoriasAPIUrl+`/Usuarios/${id}`,data);
   }
