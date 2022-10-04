@@ -1,28 +1,37 @@
 
-<form [formGroup]="form" (ngSubmit)="GuardarUsuario()">
-    <div>
-        <h1>Usuario</h1>
-    </div>
-    <div>
-        <input type="text" formControlName="nombreUsuario" placeholder="Nombre de usuario" maxlength="200">
-    </div>
-    <div>
-        <input type="text" formControlName="cedula" placeholder="cedula" maxlength="10">
-    </div>
-    <div>
-        <input type="text" formControlName="tipoUsuario" placeholder="Auditoria especializada en.."maxlength="280">
-    </div>
-    <div>
-        <input type="text" formControlName="claveUsuario" placeholder="Clave de usuario" maxlength="4">
-    </div>
-    <div>
-        <button [disabled]="form.invalid" type="submit">
-            Guardar Cambios
-         </button>
-    </div>
-</form>
+            
+            <form class="ContentForm" [formGroup]="form" (ngSubmit)="GuardarUsuario()">
+                <div>
+                    <h1>Usuario</h1>
+                </div>
+                <div class="form-group">
+                    <label for="">Nombre</label>
+                    <input type="text" formControlName="nombreUsuario" placeholder="Nombre de usuario" maxlength="200">
 
+                </div>
+                <div class="form-group">
+                    <label for="">Cédula</label>
+                    <input type="text" formControlName="cedula" placeholder="cedula" maxlength="10">
 
-<button button type="button" (click)="volver()">
-    Regresar
- </button>
+                </div>
+                <div class="form-group">
+                    <label for="">Especialidad</label>
+                    <input type="text" formControlName="tipoUsuario" placeholder="Auditoria especializada en.."maxlength="280">
+
+                </div>
+                <div class="form-group">
+                    <label for="">Clave</label>
+                    <input type="text" formControlName="claveUsuario" placeholder="Clave de usuario" maxlength="4">
+
+                </div>                
+                <div class="form-group">
+                    <button class="btn btnPrimary" [disabled]="form.invalid" type="submit">
+                        Guardar Cambios
+                     </button>
+                </div>
+            </form>
+            
+            <br>
+            <button class="btn btnSecondary" button type="button" (click)="volver()">
+                Regresar
+             </button>
